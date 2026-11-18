@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Xabar 24 — O‘zbekiston va dunyo yangiliklari.">
+  <title>Xabar 24 — Yangiliklar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline">
+    <div class="container top-inner">
+      <span id="todayDate">Xabar 24</span>
+      <span data-i18n="topline">Tezkor va ishonchli xabarlar</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="#" aria-label="Xabar 24 bosh sahifa">
+        <span class="brand-mark">X</span>
+        <span class="brand-name">XABAR<span>24</span></span>
+      </a>
+      <div class="header-actions">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Yangiliklarni qidirish..." data-i18n-placeholder="search">
+        </label>
+        <select id="languageSelect" aria-label="Tilni tanlang">
+          <option value="uz">UZ</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish">☰</button>
+      </div>
+    </div>
+    <nav class="nav-wrap" id="mainNav">
+      <div class="container nav-inner" id="categoryNav">
+        <button class="nav-link active" data-category="all" data-i18n="all">Barchasi</button>
+        <button class="nav-link" data-category="uzbekistan" data-i18n="uzbekistan">O‘zbekiston</button>
+        <button class="nav-link" data-category="world" data-i18n="world">Jahon</button>
+        <button class="nav-link" data-category="technology" data-i18n="technology">Texnologiya</button>
+        <button class="nav-link" data-category="business" data-i18n="business">Iqtisodiyot</button>
+        <button class="nav-link" data-category="sport" data-i18n="sport">Sport</button>
+        <button class="nav-link" data-category="education" data-i18n="education">Ta’lim</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="breaking">
+      <span class="breaking-label" data-i18n="breaking">SO‘NGGI XABAR</span>
+      <p data-i18n="breakingText">Xabar 24 yangiliklar portaliga xush kelibsiz.</p>
+    </section>
+
+    <div class="ad-slot ad-top">
+      <span data-i18n="adLabel">REKLAMA</span>
+      <strong data-i18n="adPlaceholder">Reklama joyi — AdSense kodi keyin qo‘shiladi</strong>
+    </div>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="mainEyebrow">KUNNING MUHIM XABARLARI</p>
+          <h1 data-i18n="mainTitle">Asosiy yangiliklar</h1>
+        </div>
+        <span class="live-dot"><i></i><span data-i18n="live">Yangilanib boradi</span></span>
+      </div>
+      <div id="featuredGrid" class="featured-grid"></div>
+    </section>
+
+    <div class="content-layout">
+      <section class="news-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow" data-i18n="latestEyebrow">DOIMIY YANGILANISH</p>
+            <h2 data-i18n="latestTitle">So‘nggi yangiliklar</h2>
+          </div>
+          <span id="resultCount" class="result-count"></span>
+        </div>
+        <div id="newsGrid" class="news-grid"></div>
+        <p id="emptyState" class="empty-state" hidden data-i18n="empty">Bu so‘rov bo‘yicha yangilik topilmadi.</p>
+      </section>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <p class="eyebrow" data-i18n="popularEyebrow">KO‘P O‘QILGAN</p>
+          <h3 data-i18n="popularTitle">Ommabop mavzular</h3>
+          <div id="popularList" class="popular-list"></div>
+        </div>
+        <div class="ad-slot ad-side">
+          <span data-i18n="adLabel">REKLAMA</span>
+          <strong data-i18n="adSide">Sizning reklamangiz shu yerda</strong>
+        </div>
+        <div class="newsletter">
+          <span class="newsletter-icon">✉</span>
+          <h3 data-i18n="newsletterTitle">Yangiliklardan xabardor bo‘ling</h3>
+          <p data-i18n="newsletterText">Muhim xabarlarni o‘tkazib yubormang.</p>
+          <form id="subscribeForm">
+            <input type="email" required placeholder="Email manzilingiz" data-i18n-placeholder="emailPlaceholder">
+            <button type="submit" data-i18n="subscribe">Obuna bo‘lish</button>
+          </form>
+          <small id="subscribeMessage" aria-live="polite"></small>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div>
+        <a class="brand footer-brand" href="#">
+          <span class="brand-mark">X</span><span class="brand-name">XABAR<span>24</span></span>
+        </a>
+        <p data-i18n="footerDesc">O‘zbekiston va dunyo yangiliklari bir joyda.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about" data-i18n="about">Biz haqimizda</a>
+        <a href="#contact" data-i18n="contact">Aloqa</a>
+        <a href="privacy.html" data-i18n="privacy">Maxfiylik siyosati</a>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year"></span> Xabar 24. <span data-i18n="rights">Barcha huquqlar himoyalangan.</span></div>
+  </footer>
+
+  <div class="modal" id="articleModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Yopish">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-content">
+        <span id="modalCategory" class="category-tag"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalMeta" class="article-meta"></p>
+        <p id="modalBody"></p>
+        <p class="source-note" data-i18n="demoNote">Namuna maqola. Nashrdan oldin ma’lumotlarni ishonchli manbalar bilan tekshiring.</p>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
